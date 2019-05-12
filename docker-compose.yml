@@ -1,0 +1,12 @@
+version: "3.1"
+services:
+  machines-web:
+    image: node:slim
+    restart: always
+    user: node
+    working_dir: /home/node/app
+    volumes: 
+      - ./:/home/node/app
+    ports:
+      - 8080:8080
+    command: "npm run serve"
